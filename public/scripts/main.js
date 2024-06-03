@@ -8,7 +8,7 @@ ws.onmessage = async (event) => {
   const reader = new FileReader();
   reader.onload = () => {
     message.textContent = reader.result;
-    chat.appendChild(message);
+    chat.insertBefore(message, chat.firstChild);
     chat.scrollTop = chat.scrollHeight;
   };
   reader.readAsText(event.data);
