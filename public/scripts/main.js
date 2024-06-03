@@ -3,7 +3,7 @@ const ws = new WebSocket("ws://localhost:3000");
 ws.onmessage = async (event) => {
   const chat = document.getElementById("chat");
   const message = document.createElement("div");
-  message.classList.add("alert", "alert-secondary");
+  message.classList.add("alert", "alert-secondary", "text-wrap");
 
   const reader = new FileReader();
   reader.onload = () => {
