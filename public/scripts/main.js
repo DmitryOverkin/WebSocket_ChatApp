@@ -17,6 +17,12 @@ ws.onmessage = async (event) => {
 document.getElementById("send").onclick = () => {
   const messageInput = document.getElementById("message");
   const message = messageInput.value;
-  ws.send(message);
-  messageInput.value = "";
+  if (message.length === 0) {
+    return
+  } else {
+    ws.send(message);
+    messageInput.value = "";
+  }
 };
+
+
